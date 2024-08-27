@@ -24,7 +24,7 @@ normaVectorial :: (Float, Float) -> Float
 normaVectorial (x, y) = sqrt (x^2 + y^2)
 
 
-
+-- No Currificada (ahora si)
 -- flip :: (a->b->c) -> (b->a->c)
 -- (-) :: (a->a->a) -> (a->a->a)
 thisSubtract :: Float -> Float -> Float
@@ -38,8 +38,10 @@ predecesor = subtract 1
 evaluarEnCero :: (Float -> b) -> b 
 evaluarEnCero = \f -> f 0
 
+
+-- Podriamos decir que esta implicitamente currificada? Aun asi lo hice mas visible
 dosVeces :: (a->a) -> a -> a
-dosVeces = \f -> f . f
+dosVeces = \f -> (\x -> (f . f) x)
 
 flipAll :: [(a->b->c)] -> [(b->a->c)]
 flipAll = map flip
