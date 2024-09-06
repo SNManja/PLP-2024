@@ -9,3 +9,6 @@ insertarElemEnCU e (x:xs) = map (\(ys) -> e:ys) (x:xs)
 
 prefijos :: [a] -> [[a]]
 prefijos (x:xs) = filter (\(y:ys) -> y /= x) (partes (x:xs))
+
+-- ! Ayuda, un centro para hacerlo con concatMap y pq el /= no va
+
