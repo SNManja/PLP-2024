@@ -29,6 +29,19 @@ takeDelProfe :: [a] -> Int -> [a]
 takeDelProfe = foldr (\x rec -> \n -> if n == 0 then [] else x : rec (n-1))
             (const [])
 
+{-
+takeDelProfe :: [a] -> Int -> [a]
+takeDelProfe = foldr (\x rec -> \n -> if n == 0 then [] else x : rec (n-1))
+            (const [])
+
+take [1,2,3] 2
+ foldr (\1 rec -> \2 -> if 2 == 0 then [] else rec 1)
+ 1 : foldr (\2 rec -> \1 -> if 1 == 0 then [] else rec 0)
+ 1 : 2 : foldr (\3 rec -> \0 -> if 0 == 0 then [] else rec 0)
+ 1 : 2 : []
+ [1,2]
+-}
+
 sacarUna :: Eq => a -> [a] -> [a]
 sacarUna e = recr (\x xs rec -> if x ==e then xs else x : rec) []
 
