@@ -13,7 +13,7 @@ ii. Indicar cuáles de las funciones anteriores no están currifcadas. Para cada
 currifcada correspondiente. Recordar dar el tipo de la función.
 
 -}
-
+-- ! TODO ESTE EJ LO HICE MAL, NO HABIA ENTENDIDO EN EL MOMENTO, A CORREJIR 
 --Currificada (toma 1 arg)
 max2 :: (Float, Float) -> Float
 max2 (x, y) | x >= y = x

@@ -65,25 +65,26 @@ instance Show a => Show (Trie a) where
 
 --Ejercicio 1
 procVacio :: Procesador a b
-procVacio = undefined
+procVacio = (\x -> [])
 
 procId :: Procesador a a
-procId = undefined
+procId = (\x -> x)
 
 procCola :: Procesador [a] a
-procCola = undefined
+procCola = (\(x:xs) -> xs)
 
 procHijosRose :: Procesador (RoseTree a) (RoseTree a)
-procHijosRose = undefined
+procHijosRose (Rose a hijos) = hijos
 
 procHijosAT :: Procesador (AT a) (AT a)
-procHijosAT = undefined
+procHijosAT (Tern v h1 h2 h3) = [h1,h2,h3] 
+procHijosAT Nil = []
 
 procRaizTrie :: Procesador (Trie a) (Maybe a)
-procRaizTrie  = undefined
+procRaizTrie TrieNodo r hijos = r
 
 procSubTries :: Procesador (Trie a) (Char, Trie a)
-procSubTries  = undefined
+procSubTries TrieNodo r hijos = hijos
 
 
 --Ejercicio 2
